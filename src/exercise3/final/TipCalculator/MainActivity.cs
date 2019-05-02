@@ -7,16 +7,18 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
-namespace TipCalculator {
+namespace TipCalculator
+{
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity {
-
+    public class MainActivity : AppCompatActivity
+    {
         EditText inputBill;
         Button calculateButton;
         TextView outputTip;
         TextView outputTotal;
 
-        protected override void OnCreate(Bundle savedInstanceState) {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
@@ -33,10 +35,12 @@ namespace TipCalculator {
             calculateButton.Click += OnCalculateClick;
         }
 
-        void OnCalculateClick(object sender, EventArgs e) {
+        void OnCalculateClick(object sender, EventArgs e)
+        {
             string text = inputBill.Text;
             double bill = 0;
-            if (double.TryParse(text, out bill)) {
+            if (double.TryParse(text, out bill))
+            {
                 var tip = bill * 0.15;
                 var total = bill + tip;
 
@@ -45,14 +49,17 @@ namespace TipCalculator {
             }
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu) {
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item) {
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
             int id = item.ItemId;
-            if (id == Resource.Id.action_settings) {
+            if (id == Resource.Id.action_settings)
+            {
                 return true;
             }
 
@@ -60,7 +67,8 @@ namespace TipCalculator {
         }
 
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults) {
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
