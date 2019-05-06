@@ -1,7 +1,6 @@
 # Microsoft Learn: Introduction to Xamarin.Android
 
-[//]: # (TODO: Link back to Microsoft Learn module.)
-This project contains the source code for the **Introduction to Xamarin.Android** Microsoft Learn module.
+This project contains the source code for the [**Introduction to Xamarin.Android**](https://docs.microsoft.com/learn/modules/introduction-to-xamarin-android/) Microsoft Learn module.
 
 # Contributing
 
